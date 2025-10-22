@@ -6,4 +6,4 @@ spring:
     name: product-service
   data:
     mongodb:
-      uri: mongodb+srv://jjmirandam_db_user:BJyZjBN4naetrmYU@clustersoe.bcqm3lu.mongodb.net/app?retryWrites=true&w=majority&appName=ClusterSoe
+      uri: ${MONGODB_URI:mongodb://localhost:27017/app}
