@@ -1,0 +1,191 @@
+# ===========================================
+# Microservices Project - .gitignore
+# ===========================================
+
+# === Java Compiled Files ===
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+
+# === Maven ===
+# Target directories for each microservice
+user-service/target/
+product-service/target/
+sale-service/target/
+target/
+
+# Maven wrapper (keep the wrapper files, ignore logs)
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+!user-service/.mvn/wrapper/maven-wrapper.jar
+!user-service/.mvn/wrapper/maven-wrapper.properties
+!product-service/.mvn/wrapper/maven-wrapper.jar
+!product-service/.mvn/wrapper/maven-wrapper.properties
+!sale-service/.mvn/wrapper/maven-wrapper.jar
+!sale-service/.mvn/wrapper/maven-wrapper.properties
+
+# === Spring Boot ===
+*.original
+application-*.yml
+application-*.properties
+!application.yml
+!application.properties
+
+# === IDEs ===
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea_modules/
+atlassian-ide-plugin.xml
+
+# Eclipse
+.project
+.classpath
+.settings/
+.apt_generated/
+.springBeans
+.factorypath
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# === OS-specific ===
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# === Logs & Temporary Files ===
+*.log
+*.log.*
+logs/
+log/
+tmp/
+temp/
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# === Environment & Configuration ===
+# Environment files (IMPORTANT: Keep secrets out of git)
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging
+
+# Configuration files with sensitive data
+application-local.yml
+application-dev.yml
+application-prod.yml
+application-staging.yml
+application-test.yml
+
+# === Docker ===
+# Docker override files (may contain sensitive data)
+docker-compose.override.yml
+docker-compose.local.yml
+docker-compose.prod.yml
+
+# === Database ===
+# Local database files
+*.db
+*.sqlite
+*.sqlite3
+
+# === Build Artifacts ===
+# Maven
+dependency-reduced-pom.xml
+buildNumber.properties
+
+# === Microservices Specific ===
+# Keep the structure but ignore build artifacts
+# Note: These patterns are redundant since we're not ignoring these files above
+# but kept for clarity and future-proofing
+
+# === Security ===
+# Never commit these
+*.pem
+*.key
+*.crt
+*.p12
+*.jks
+*.keystore
+secrets/
+credentials/
+
+# === Backup Files ===
+*.bak
+*.backup
+*.old
+*.orig
+
+# === Package Managers ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# === Other ===
+# JetBrains
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
