@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  user-service:
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    environment:
+      - MONGODB_URI=${MONGODB_URI:-mongodb://localhost:27017/microservices_db}
+    depends_on:
+      - mongodb
+    networks:
+      - microservices-network
+
+  product-service:
+    build:
+      context: ./product-service
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    environment:
+      - MONGODB_URI=${MONGODB_URI:-mongodb://localhost:27017/microservices_db}
+    depends_on:
+      - mongodb
+    networks:
+      - microservices-network
+
+  sale-service:
+    build:
+      context: ./sale-service
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8083"
+    environment:
+      - MONGODB_URI=${MONGODB_URI:-mongodb://localhost:27017/microservices_db}
+    depends_on:
+      - mongodb
+    networks:
+      - microservices-network
+
+  mongodb:
+    image: mongo:7.0
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=microservices_db
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - microservices-network
+
+networks:
+  microservices-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
