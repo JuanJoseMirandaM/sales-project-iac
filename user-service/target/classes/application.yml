@@ -1,9 +1,0 @@
-server:
-  port: 8081
-
-spring:
-  application:
-    name: user-service
-  data:
-    mongodb:
-      uri: ${MONGODB_URI:mongodb://localhost:27017/app}
